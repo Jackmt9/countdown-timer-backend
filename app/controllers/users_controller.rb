@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
         
-    before_action :authorized, only: [:validate_token]
+    before_action :authorized, only: [:stay_logged_in]
   
     def create
       @user = User.create(user_params)
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   
   
   
-    def validate_token
+    def stay_logged_in
       # @user comes from the before_action
       wristband = encode_token({user_id: @user.id})
 
