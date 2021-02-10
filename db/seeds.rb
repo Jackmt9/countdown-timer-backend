@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+print('Initializing Seed Data...')
+
+john_doe = User.create(first_name: 'John', last_name: 'Doe', email: 'john_doe@gmail.com', password_digest: 'admin')
+timer = Timer.create(time: 1612998762, user_id: john_doe.id, title: 'Test Timer')
+
+
+print('Seeding Successful!')
