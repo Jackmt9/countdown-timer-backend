@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 print('Initializing Seed Data...')
 
-john_doe = User.create(first_name: 'John', last_name: 'Doe', email: 'john_doe@gmail.com', password_digest: 'admin')
+john_doe = User.create(first_name: 'John', last_name: 'Doe', email: 'john_doe@gmail.com', password: 'admin')
 timer = Timer.create(time: 1612998762, user_id: john_doe.id, title: 'Test Timer')
 
 

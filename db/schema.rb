@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_172916) do
   enable_extension "plpgsql"
 
   create_table "timers", force: :cascade do |t|
-    t.integer "time"
+    t.bigint "time"
     t.string "title"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_timers_on_user_id"
