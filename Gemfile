@@ -42,3 +42,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use for cryptographic signing. Read more: https://github.com/jwt/ruby-jwt
 gem 'jwt'
+
+# Use to serialize data. Read more: https://github.com/rails-api/active_model_serializers
+gem 'active_model_serializers', '~> 0.10.0'

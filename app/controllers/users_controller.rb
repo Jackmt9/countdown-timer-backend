@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         if @user.valid?
             wristband = encode_token({user_id: @user.id})
             render json: {
-                user: @user,
+                user: UserSerializer.new(@user),
                 token: wristband
             }
         else
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password])
             wristband = encode_token({user_id: @user.id})
             render json: {
-                user: @user,
+                user: UserSerializer.new(@user),
                 token: wristband
             }
         else
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     def stay_logged_in
         wristband = encode_token({user_id: @user.id})
         render json: {
-            user: @user,
+            user: UserSerializer.new(@user),
             token: wristband
         }
     end
